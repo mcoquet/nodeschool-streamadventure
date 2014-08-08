@@ -7,15 +7,9 @@ module.exports = function(counter)
 		  var obj = {}; 
 
 			function data (d){
-				var index = d.country || false
-				if (index){
-					if (!obj[index]) { obj[index] = 0;}
-					obj[index]++;
+					obj[d.country] = (obj[d.country] || 0) + 1;
 				}
-
-
 				
-			}
 
 			function end(){
 				counter.setCounts(obj);
